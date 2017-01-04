@@ -1,0 +1,64 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
+      xmlns:converters="clr-namespace:FEC.Converters;assembly=FBLA2017"
+      Title="EmployeeList" HorizontalAlignment="Left">
+    <Page.Resources>
+        <Image x:Key="Edit" Source="Edit_grey_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+        <Image x:Key="Schedule" Source="Calendar_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+        <Image x:Key="Delete" Source="VSO_RecycleBin_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+
+        <converters:JobConverter x:Key="JobConverter" />
+        <converters:PayConverter x:Key="PayConverter" />
+    </Page.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Bottom">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Command="{Binding AddEmployee}" Header="_Add Employee" HorizontalAlignment="Right" />
+        </Menu>
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding Rows}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="3*" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="3*" />
+                <DataGridTextColumn Header="Job Title" Binding="{Binding Path=JobTitle, Converter={StaticResource JobConverter}}" Width="4*" />
+                <DataGridTextColumn Header="Payment" Binding="{Binding Payment, Converter={StaticResource PayConverter}}" Width="4*" />
+                <DataGridTemplateColumn Header="Edit" Width="1.5*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding Path=DataContext.EditEmployee,       
+                                                      RelativeSource={RelativeSource FindAncestor,
+                                                                                     AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding ID}" Content="{StaticResource Edit}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Schedule" Width="1.5*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding Path=DataContext.EditSchedule,       
+                                                      RelativeSource={RelativeSource FindAncestor,
+                                                                                     AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding ID}" Content="{StaticResource Schedule}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete" Width="1.5*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding Path=DataContext.DeleteEmployee,       
+                                                      RelativeSource={RelativeSource FindAncestor,
+                                                                                     AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding ID}" Content="{StaticResource Delete}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Page>

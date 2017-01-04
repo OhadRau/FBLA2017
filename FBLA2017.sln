@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FBLA2017", "FBLA2017\FBLA2017.fsproj", "{121ED802-8FFF-436A-AB4B-2307C69264C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{121ED802-8FFF-436A-AB4B-2307C69264C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{121ED802-8FFF-436A-AB4B-2307C69264C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{121ED802-8FFF-436A-AB4B-2307C69264C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{121ED802-8FFF-436A-AB4B-2307C69264C9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 ﻿namespace FEC
 
-module SchedulePage =
+module AttendancePage =
     open FsXaml
     open System.Windows
     open System.Data.SQLite
@@ -12,13 +12,13 @@ module SchedulePage =
 
     type MergedData = { // We can only have 1 data source for the DataGrid
         Label : string
-        Hours : Hour<bool>
+        Hours : Hour<int>
     }
 
-    type SchedulePageBase = XAML<"SchedulePage.xaml">
+    type AttendancePageBase = XAML<"AttendancePage.xaml">
 
-    type SchedulePage (conn : SQLiteConnection, mainWindow : Window, employeeList : Page, id : int, schedule : Hour<bool>[]) as self =
-        inherit SchedulePageBase ()
+    type AttendancePage (conn : SQLiteConnection, mainWindow : Window, attendance : Hour<int>[]) as self =
+        inherit AttendancePageBase ()
 
         do self.DataContext <- self
 
@@ -29,14 +29,14 @@ module SchedulePage =
                     let period = if i < 12 then "AM" else "PM"
                     sprintf "%i:00 %s" hour period
                 Array.map hour_of_int [|0..23|]
-            Array.map2 (fun l h -> { Label=l; Hours=h }) labels schedule
+            Array.map2 (fun l h -> { Label=l; Hours=h }) labels attendance
 
         member val Rows = merged
-        member self.GetSchedule = self.Rows |> Array.map (fun s -> s.Hours)
+        member self.GetAttendance = self.Rows |> Array.map (fun s -> s.Hours)
 
-        member self.Save =
+(*        member self.Save =
             let save _ =
-                Data.saveSchedule conn id self.GetSchedule
+                Data.saveSchedule conn id self.GetAttendance
                 let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
                 mainView.Content <- employeeList
             ClosureCommand save
@@ -45,8 +45,8 @@ module SchedulePage =
             let cancel _ =
                 let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
                 mainView.Content <- employeeList
-            ClosureCommand cancel
+            ClosureCommand cancel *)
 
-    let create conn window employeeList id schedule =
-        let page = SchedulePage (conn, window, employeeList, id, schedule)
+    let create conn window attendance =
+        let page = AttendancePage (conn, window, attendance)
         page

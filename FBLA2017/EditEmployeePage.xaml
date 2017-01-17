@@ -46,7 +46,7 @@
             <ComboBoxItem>Waiter/Waitress</ComboBoxItem>
         </ComboBox>
 
-        <Label HorizontalAlignment="Right" Grid.Row="6">Job Title:</Label>
+        <Label HorizontalAlignment="Right" Grid.Row="6">Payment:</Label>
         <ComboBox x:Name="PayType" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1">
             <ComboBoxItem>Wage</ComboBoxItem>
             <ComboBoxItem>Salary</ComboBoxItem>

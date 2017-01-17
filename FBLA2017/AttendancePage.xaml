@@ -1,0 +1,29 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
+      Title="SchedulePage" HorizontalAlignment="Left">
+    <DockPanel>
+        <Menu DockPanel.Dock="Bottom">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch" />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Command="{Binding Cancel}" Header="_Cancel" />
+            <MenuItem Command="{Binding Save}" Header="_Save" HorizontalAlignment="Right" />
+        </Menu>
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding Rows}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Hour" Binding="{Binding Label}" IsReadOnly="True" Width="*" />
+                <DataGridTextColumn Header="Sunday" Binding="{Binding Path=Hours.Sunday}" Width="*" />
+                <DataGridTextColumn Header="Monday" Binding="{Binding Path=Hours.Monday}" Width="*" />
+                <DataGridTextColumn Header="Tuesday" Binding="{Binding Path=Hours.Tuesday}" Width="*" />
+                <DataGridTextColumn Header="Wednesday" Binding="{Binding Path=Hours.Wednesday}" Width="*" />
+                <DataGridTextColumn Header="Thursday" Binding="{Binding Path=Hours.Thursday}" Width="*" />
+                <DataGridTextColumn Header="Friday" Binding="{Binding Path=Hours.Friday}" Width="*" />
+                <DataGridTextColumn Header="Saturday" Binding="{Binding Path=Hours.Saturday}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Page>

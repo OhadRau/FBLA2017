@@ -9,14 +9,14 @@ module Data =
     open System.Runtime.Serialization
     open System.Runtime.Serialization.Formatters.Binary
 
-    type Hour = { // 24-hour units for every day
-        mutable Sunday    : bool
-        mutable Monday    : bool
-        mutable Tuesday   : bool
-        mutable Wednesday : bool
-        mutable Thursday  : bool
-        mutable Friday    : bool
-        mutable Saturday  : bool
+    type Hour<'a> = { // 24-hour units for every day
+        mutable Sunday    : 'a
+        mutable Monday    : 'a
+        mutable Tuesday   : 'a
+        mutable Wednesday : 'a
+        mutable Thursday  : 'a
+        mutable Friday    : 'a
+        mutable Saturday  : 'a
     }
 
     let blankSchedule () = Array.init 24 <| fun _ -> {
@@ -27,6 +27,16 @@ module Data =
         Thursday  = false
         Friday    = false
         Saturday  = false
+    }
+
+    let blankAttendance () = Array.init 24 <| fun _ -> {
+        Sunday    = 0
+        Monday    = 0
+        Tuesday   = 0
+        Wednesday = 0
+        Thursday  = 0
+        Friday    = 0
+        Saturday  = 0
     }
 
     type Job =
@@ -84,7 +94,7 @@ module Data =
         mutable LastName : string
         mutable JobTitle : Job
         mutable Payment : Pay
-        mutable Schedule : Hour[] // 24x
+        mutable Schedule : Hour<bool>[] // 24x
     }
 
     let serialize<'a> (x :'a) =
@@ -107,14 +117,17 @@ module Data =
         let conn = SQLiteConnection (conn_string)
         conn.Open ()
         if init then
-            let create = "CREATE TABLE employees (first TEXT NOT NULL,
-                                                  last TEXT NOT NULL,
-                                                  job TEXT NOT NULL,
-                                                  payType TEXT NOT NULL,
-                                                  pay INTEGER NOT NULL,
-                                                  schedule BLOB NOT NULL)"
-            let cmd = SQLiteCommand (create, conn)
-            cmd.ExecuteNonQuery () |> ignore
+            let create_employees = "CREATE TABLE employees (first TEXT NOT NULL,
+                                                            last TEXT NOT NULL,
+                                                            job TEXT NOT NULL,
+                                                            payType TEXT NOT NULL,
+                                                            pay INTEGER NOT NULL,
+                                                            schedule BLOB NOT NULL)"
+            let create_attendance = "CREATE TABLE attendance (sunday DATETIME UNIQUE,
+                                                              attendance BLOB NOT NULL)"
+            [ SQLiteCommand (create_employees, conn)
+            ; SQLiteCommand (create_attendance, conn)
+            ] |> List.map (fun c -> c.ExecuteNonQuery ()) |> ignore
         conn
 
     let addEmployee conn firstName lastName jobTitle payment schedule =
@@ -122,7 +135,7 @@ module Data =
                              | Salary x -> ("Salary", x)
                              | Wage x -> ("Wage", x)
 
-        let blob = serialize<Hour[]> schedule
+        let blob = serialize<Hour<bool>[]> schedule
         let fParam = SQLiteParameter ("@f", DbType.String, Value=firstName)
         let lParam = SQLiteParameter ("@l", DbType.String, Value=lastName)
         let jParam = SQLiteParameter ("@j", DbType.String, Value=string_of_job jobTitle)
@@ -176,7 +189,7 @@ module Data =
                        ; LastName = employees.["last"] :?> string
                        ; JobTitle = employees.["job"] :?> string |> job_of_string
                        ; Payment = if isSalary then Salary pay else Wage pay
-                       ; Schedule = deserialize<Hour[]> (employees.["schedule"] :?> byte[])
+                       ; Schedule = deserialize<Hour<bool>[]> (employees.["schedule"] :?> byte[])
                        }
         result
 
@@ -190,7 +203,7 @@ module Data =
 
 
     let saveSchedule conn id schedule =
-        let blob = serialize<Hour[]> schedule
+        let blob = serialize<Hour<bool>[]> schedule
         let sParam = SQLiteParameter ("@s", DbType.Binary, Value=blob)
         let iParam = SQLiteParameter ("@i", DbType.Int32, Value=id)
 
@@ -198,3 +211,17 @@ module Data =
         let cmd = SQLiteCommand (query, conn)
         List.map cmd.Parameters.Add [sParam; iParam] |> ignore
         cmd.ExecuteNonQuery () |> ignore
+
+    let getAttendanceForWeek conn (week : System.DateTime) =
+        let normalized = week.AddDays(-(Convert.ToDouble week.DayOfWeek)) // Move to that Sunday
+                             .AddHours(-(float week.Hour))                // Remove hours
+                             .AddMinutes(-(float week.Minute))            // Remove minutes
+                             .AddSeconds(-(float week.Second))            // Remove seconds
+                             .AddMilliseconds(-(float week.Millisecond))  // Remove milliseconds *)
+        let sParam = SQLiteParameter ("@s", DbType.DateTime, Value=normalized)
+        
+        let query = "SELECT attendance FROM attendance WHERE sunday = @s"
+        let cmd = SQLiteCommand (query, conn)
+        cmd.Parameters.Add sParam |> ignore
+        
+        cmd.ExecuteScalar () :?> byte[] |> deserialize<Hour<int>[]>

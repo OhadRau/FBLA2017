@@ -13,7 +13,7 @@ module EditEmployeePage =
 
     type EditEmployeePageBase = XAML<"EditEmployeePage.xaml">
 
-    type EditEmployeePage (conn : SQLiteConnection, mainWindow : Window, employeeList : Page, employee : Employee) as self =
+    type EditEmployeePage (conn : SQLiteConnection, mainWindow : Window, previous : Page, employee : Employee) as self =
         inherit EditEmployeePageBase ()
 
         do self.DataContext <- self
@@ -30,8 +30,8 @@ module EditEmployeePage =
            
         member self.Cancel =
             let cancel _ =
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
-                mainView.Content <- employeeList
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- previous
             ClosureCommand cancel
 
         member self.Save =
@@ -43,10 +43,10 @@ module EditEmployeePage =
                           | "Wage" -> Wage (int_of_pay_string self.Pay.Text)
                           | "Salary" -> Salary (int_of_pay_string self.Pay.Text)
                 ignore (updateEmployee conn first last job pay)
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
-                mainView.Content <- employeeList
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- previous
             ClosureCommand save
 
-    let create conn window employeeList employee =
-        let page = EditEmployeePage (conn, window, employeeList, employee)
+    let create conn window previous employee =
+        let page = EditEmployeePage (conn, window, previous, employee)
         page

@@ -12,11 +12,11 @@ module EmployeeList =
 
     type EmployeeListBase = XAML<"EmployeeList.xaml">
 
-    type EmployeeList (conn : SQLiteConnection, mainWindow : System.Windows.Window) as self =
+    type EmployeeList (conn : SQLiteConnection, mainWindow : Window, previous : Page) as self =
         inherit EmployeeListBase ()
 
         do self.DataContext <- self
-           let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
+           let mainView = mainWindow.FindName("MainView") :?> Frame
            let refresh _ =
                self.Rows <- getEmployees conn
                self.DataGrid.ItemsSource <- self.Rows
@@ -29,31 +29,37 @@ module EmployeeList =
 
         member self.AddEmployee =
             let add _ =
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
-                mainView.Content <- FEC.AddEmployeePage.create conn mainWindow self
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- AddEmployeePage.create conn mainWindow self
             ClosureCommand add
+
+        member self.Done =
+            let ``done`` _ =
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- previous
+            ClosureCommand ``done``
 
         member self.EditEmployee =
             let edit (param : obj) =
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
+                let mainView = mainWindow.FindName("MainView") :?> Frame
                 let employee = query {
                     for employee in self.Rows do
                         where (param :?> int = employee.ID)
                         select employee
                         exactlyOne }
-                mainView.Content <- FEC.EditEmployeePage.create conn mainWindow self employee
+                mainView.Content <- EditEmployeePage.create conn mainWindow self employee
             ClosureCommand edit
 
         member self.EditSchedule =
             let edit (param : obj) =
                 let id = param :?> int
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
+                let mainView = mainWindow.FindName("MainView") :?> Frame
                 let schedule = query {
                     for employee in employees do
                         where (employee.ID = id)
                         select employee.Schedule
                         exactlyOne }
-                mainView.Content <- FEC.SchedulePage.create conn mainWindow self id schedule
+                mainView.Content <- SchedulePage.create conn mainWindow self id schedule
             ClosureCommand edit
 
         member self.DeleteEmployee =
@@ -64,6 +70,6 @@ module EmployeeList =
                 self.DataGrid.ItemsSource <- self.Rows
             ClosureCommand delete
 
-    let create conn window employees =
-        let page = EmployeeList (conn, window)
+    let create conn window previous =
+        let page = EmployeeList (conn, window, previous)
         page

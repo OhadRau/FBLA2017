@@ -25,7 +25,7 @@ module SchedulePage =
         let mutable merged =
             let labels =
                 let hour_of_int i =
-                    let hour = (i % 12) + 1
+                    let hour = if i % 12 = 0 then 12 else i % 12
                     let period = if i < 12 then "AM" else "PM"
                     sprintf "%i:00 %s" hour period
                 Array.map hour_of_int [|0..23|]
@@ -36,14 +36,14 @@ module SchedulePage =
 
         member self.Save =
             let save _ =
-                Data.saveSchedule conn id self.GetSchedule
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
+                saveSchedule conn id self.GetSchedule
+                let mainView = mainWindow.FindName("MainView") :?> Frame
                 mainView.Content <- employeeList
             ClosureCommand save
 
         member self.Cancel =
             let cancel _ =
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
+                let mainView = mainWindow.FindName("MainView") :?> Frame
                 mainView.Content <- employeeList
             ClosureCommand cancel
 

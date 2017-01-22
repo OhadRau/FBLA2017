@@ -212,16 +212,51 @@ module Data =
         List.map cmd.Parameters.Add [sParam; iParam] |> ignore
         cmd.ExecuteNonQuery () |> ignore
 
-    let getAttendanceForWeek conn (week : System.DateTime) =
-        let normalized = week.AddDays(-(Convert.ToDouble week.DayOfWeek)) // Move to that Sunday
-                             .AddHours(-(float week.Hour))                // Remove hours
-                             .AddMinutes(-(float week.Minute))            // Remove minutes
-                             .AddSeconds(-(float week.Second))            // Remove seconds
-                             .AddMilliseconds(-(float week.Millisecond))  // Remove milliseconds *)
-        let sParam = SQLiteParameter ("@s", DbType.DateTime, Value=normalized)
+    let week_of_datetime (week : System.DateTime) =
+        let week' = week.AddDays(-(Convert.ToDouble week.DayOfWeek)) // Move to that Sunday
+        DateTime (week'.Year, week'.Month, week'.Day)
+
+    let hour_of_datetime (day : System.DateTime) =
+        DateTime (day.Year, day.Month, day.Day, day.Hour, 0, 0)
+
+    let getWeek () =
+        week_of_datetime (System.DateTime.Now)
+
+    let getAttendance conn datetime =
+        let sParam = SQLiteParameter ("@s", DbType.DateTime, Value=datetime)
         
         let query = "SELECT attendance FROM attendance WHERE sunday = @s"
         let cmd = SQLiteCommand (query, conn)
         cmd.Parameters.Add sParam |> ignore
         
-        cmd.ExecuteScalar () :?> byte[] |> deserialize<Hour<int>[]>
+        let bytes = cmd.ExecuteScalar () :?> byte[]
+        if bytes = null
+            then blankAttendance ()
+            else deserialize<Hour<int>[]> bytes
+
+    let getAttendanceForWeek conn week =
+        let normalized = week_of_datetime week
+        getAttendance conn normalized
+
+    let getAttendanceForHour conn day =
+        let normalized = hour_of_datetime day
+        getAttendance conn normalized
+
+    let saveAttendance conn datetime attendance =
+        let sParam = SQLiteParameter ("@s", DbType.DateTime, Value=datetime)
+
+        let blob = serialize<Hour<int>[]> attendance
+        let aParam = SQLiteParameter ("@a", DbType.Binary, Value=blob)
+
+        let query = "INSERT OR REPLACE INTO attendance (sunday, attendance) VALUES (@s, @a)"
+        let cmd = SQLiteCommand (query, conn)
+        List.map cmd.Parameters.Add [sParam; aParam] |> ignore
+        cmd.ExecuteNonQuery () |> ignore
+
+    let saveAttendanceForWeek conn week attendance =
+        let normalized = week_of_datetime week
+        saveAttendance conn normalized attendance
+
+    let saveAttendanceForHour conn day attendance =
+        let normalized = hour_of_datetime day
+        saveAttendance conn normalized attendance

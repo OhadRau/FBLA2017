@@ -13,15 +13,15 @@ module AddEmployeePage =
 
     type AddEmployeePageBase = XAML<"AddEmployeePage.xaml">
 
-    type AddEmployeePage (conn : SQLiteConnection, mainWindow : Window, employeeList : Page) as self =
+    type AddEmployeePage (conn : SQLiteConnection, mainWindow : Window, previous : Page) as self =
         inherit AddEmployeePageBase ()
 
         do self.DataContext <- self
 
         member self.Cancel =
             let cancel _ =
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
-                mainView.Content <- employeeList
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- previous
             ClosureCommand cancel
 
         member self.Save =
@@ -33,10 +33,10 @@ module AddEmployeePage =
                           | "Wage" -> Wage (int_of_pay_string self.Pay.Text)
                           | "Salary" -> Salary (int_of_pay_string self.Pay.Text)
                 ignore (addEmployee conn first last job pay <| blankSchedule ())
-                let mainView = mainWindow.FindName("MainView") :?> System.Windows.Controls.Frame
-                mainView.Content <- employeeList
+                let mainView = mainWindow.FindName("MainView") :?> Frame
+                mainView.Content <- previous
             ClosureCommand save
 
-    let create conn window employeeList =
-        let page = AddEmployeePage (conn, window, employeeList)
+    let create conn window previous =
+        let page = AddEmployeePage (conn, window, previous)
         page

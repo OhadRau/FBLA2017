@@ -60,9 +60,12 @@
     <Compile Include="Data.fs" />
     <Compile Include="Common.fs" />
     <Compile Include="Converters.fs" />
+    <Compile Include="AttendancePage.xaml.fs" />
+    <Compile Include="SchedulePage.xaml.fs" />
     <Compile Include="AddEmployeePage.xaml.fs" />
     <Compile Include="EditEmployeePage.xaml.fs" />
     <Compile Include="EmployeeList.xaml.fs" />
+    <Compile Include="Dashboard.xaml.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Resource Include="MainWindow.xaml" />
@@ -71,12 +74,11 @@
     <Resource Include="AddEmployeePage.xaml" />
     <Resource Include="EditEmployeePage.xaml" />
     <Resource Include="EmployeeList.xaml" />
+    <Resource Include="Dashboard.xaml" />
     <Resource Include="Edit_grey_16x.png" />
     <Resource Include="Calendar_16x.png" />
     <Resource Include="VSO_RecycleBin_16x.png" />
     <Content Include="packages.config" />
-    <Compile Include="AttendancePage.xaml.fs" />
-    <Compile Include="SchedulePage.xaml.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">

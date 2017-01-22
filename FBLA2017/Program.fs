@@ -15,10 +15,10 @@ module Main =
     [<STAThread>]
     [<EntryPoint>]
     let main argv =
-        let conn = FEC.Data.createOrOpen "./FEC.db"
+        let conn = createOrOpen "./FEC.db"
 
         let mainWindow = MainWindow ()
-        let page = FEC.EmployeeList.create conn mainWindow []
+        let page = FEC.Dashboard.create conn mainWindow
         mainWindow.MainView.Content <- page
         let application = Application ()
         let ret = application.Run mainWindow

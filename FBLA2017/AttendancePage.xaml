@@ -16,13 +16,13 @@
         <DataGrid x:Name="DataGrid" ItemsSource="{Binding Rows}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Hour" Binding="{Binding Label}" IsReadOnly="True" Width="*" />
-                <DataGridTextColumn Header="Sunday" Binding="{Binding Path=Hours.Sunday}" Width="*" />
-                <DataGridTextColumn Header="Monday" Binding="{Binding Path=Hours.Monday}" Width="*" />
-                <DataGridTextColumn Header="Tuesday" Binding="{Binding Path=Hours.Tuesday}" Width="*" />
-                <DataGridTextColumn Header="Wednesday" Binding="{Binding Path=Hours.Wednesday}" Width="*" />
-                <DataGridTextColumn Header="Thursday" Binding="{Binding Path=Hours.Thursday}" Width="*" />
-                <DataGridTextColumn Header="Friday" Binding="{Binding Path=Hours.Friday}" Width="*" />
-                <DataGridTextColumn Header="Saturday" Binding="{Binding Path=Hours.Saturday}" Width="*" />
+                <DataGridTextColumn Header="Sunday" Binding="{Binding Path=Hours.Sunday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Monday" Binding="{Binding Path=Hours.Monday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Tuesday" Binding="{Binding Path=Hours.Tuesday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Wednesday" Binding="{Binding Path=Hours.Wednesday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Thursday" Binding="{Binding Path=Hours.Thursday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Friday" Binding="{Binding Path=Hours.Friday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                <DataGridTextColumn Header="Saturday" Binding="{Binding Path=Hours.Saturday, UpdateSourceTrigger=PropertyChanged}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>

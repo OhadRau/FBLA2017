@@ -1,0 +1,68 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
+      xmlns:converters="clr-namespace:FEC.Converters;assembly=FBLA2017"
+      Title="EmployeeList" HorizontalAlignment="Left">
+    <StackPanel Orientation="Vertical" MinWidth="450">
+        <GroupBox Header="Employees">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <!-- Left column (buttons) -->
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="15" />
+
+                    <!-- Right column (data) -->
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <!-- Hire button + # of employees -->
+                    <RowDefinition />
+                    <RowDefinition Height="15" />
+                    
+                    <!-- View/edit button + employee expenses -->
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddEmployee}">Hire</Button>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                    <Label>Number of Employees: </Label>
+                    <Label Content="{Binding EmployeeCount}" />
+                </StackPanel>
+
+                <Button Grid.Row="2" Grid.Column="0" Command="{Binding ViewEmployees}">View/Edit</Button>
+
+                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                    <Label>Employee Expenses: </Label>
+                    <Label Content="{Binding EmployeeExpenses}" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Customers">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <!-- Daily Attendance -->
+                    <RowDefinition />
+                    <RowDefinition Height="15" />
+
+                    <!-- Hourly Attendance -->
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label>Today's Attendance: </Label>
+                    <Label x:Name="DailyAttendanceCount"  Content="{Binding DailyAttendance}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label>Last Hour: </Label>
+                    <TextBox x:Name="HourlyAttendanceCount" MinWidth="100" Text="{Binding HourlyAttendance, UpdateSourceTrigger=LostFocus}" />
+                    <Button Command="{Binding ViewAttendance}">Full View</Button>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Reports">
+        </GroupBox>
+    </StackPanel>
+</Page>

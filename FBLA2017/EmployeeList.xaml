@@ -19,7 +19,8 @@
                     <DockPanel HorizontalAlignment="Stretch" />
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <MenuItem Command="{Binding AddEmployee}" Header="_Add Employee" HorizontalAlignment="Right" />
+            <MenuItem Command="{Binding AddEmployee}" Header="_Add Employee" />
+            <MenuItem Command="{Binding Done}" Header="_Done" HorizontalAlignment="Right" />
         </Menu>
         <DataGrid x:Name="DataGrid" ItemsSource="{Binding Rows}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" CanUserDeleteRows="False" IsReadOnly="True">
             <DataGrid.Columns>

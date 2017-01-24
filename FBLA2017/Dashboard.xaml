@@ -63,6 +63,20 @@
             </Grid>
         </GroupBox>
         <GroupBox Header="Reports">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="15" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Command="{Binding PeakDays}">Peak Days</Button>
+                <Button Grid.Row="2" Grid.Column="0" Command="{Binding PeakHours}">Peak Hours</Button>
+            </Grid>
         </GroupBox>
     </StackPanel>
 </Page>

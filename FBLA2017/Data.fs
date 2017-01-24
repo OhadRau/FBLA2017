@@ -242,6 +242,17 @@ module Data =
         let normalized = hour_of_datetime day
         getAttendance conn normalized
 
+    let getAllAttendance conn =
+        let query = "SELECT * FROM attendance"
+        let cmd = SQLiteCommand (query, conn)
+
+        let weeks = cmd.ExecuteReader ()
+
+        let mutable result = ResizeArray<Hour<int>[]> ()
+        while weeks.Read () do
+            result.Add <| deserialize<Hour<int>[]> (weeks.["attendance"] :?> byte[])
+        result
+
     let saveAttendance conn datetime attendance =
         let sParam = SQLiteParameter ("@s", DbType.DateTime, Value=datetime)
 

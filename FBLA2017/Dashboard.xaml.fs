@@ -48,6 +48,14 @@ module Dashboard =
                 mainView.Content <- AttendancePage.create conn mainWindow attendance (getWeek ()) self
             ClosureCommand view
 
+        member self.PeakDays =
+            let graph _ = Reports.peakDays conn |> ignore
+            ClosureCommand graph
+
+        member self.PeakHours =
+            let graph _ = Reports.peakHours conn |> ignore
+            ClosureCommand graph
+
         member self.DailyAttendance
             with get () =
                 let attendance = getAttendanceForWeek conn (getWeek ())

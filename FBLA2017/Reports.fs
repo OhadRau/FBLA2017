@@ -1,12 +1,33 @@
 ﻿namespace FEC
 
 module Reports =
+    open FsXaml
     open System
     open System.Linq
+    open System.Windows
     open FSharp.Charting
+    open System.Windows.Controls
+    open System.Drawing.Printing
     open Microsoft.FSharp.Reflection
+    open System.Windows.Media.Imaging
 
     open FEC.Data
+
+    let showChart (chart : ChartTypes.GenericChart) =
+        let cancel (form : Forms.Form) _ _ =
+            form.Close ()
+        let print _ _ =
+            chart.SaveChartAs ("report.png", ChartTypes.ChartImageFormat.Png)
+            let img = Drawing.Image.FromFile "report.png"
+            let doc = PrintDocument ()
+            doc.PrintPage.Add (fun e ->
+                e.Graphics.DrawImage(img, Drawing.Point(0, 0)))
+            doc.Print()
+        let form = chart.ShowChart ()
+        form.Menu <- Forms.MainMenu [|
+            Forms.MenuItem ("Cancel", EventHandler (cancel form));
+            Forms.MenuItem ("Print", EventHandler print)
+        |]
 
     let peakDays conn =
         let allWeeks = Data.getAllAttendance conn
@@ -25,7 +46,7 @@ module Reports =
         |> Chart.Line
         |> Chart.WithXAxis (Title = "Day of Week", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
         |> Chart.WithYAxis (Title = "Number of Customers")
-        |> Chart.Show
+        |> showChart
 
     let peakHours conn =
         let allWeeks = Data.getAllAttendance conn
@@ -44,4 +65,4 @@ module Reports =
         |> Chart.Line
         |> Chart.WithXAxis (Title = "Time of Day", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
         |> Chart.WithYAxis (Title = "Number of Customers")
-        |> Chart.Show
+        |> showChart

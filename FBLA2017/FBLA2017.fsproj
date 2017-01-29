@@ -80,6 +80,8 @@
     <Resource Include="Calendar_16x.png" />
     <Resource Include="VSO_RecycleBin_16x.png" />
     <Content Include="packages.config" />
+    <Resource Include="FunZone_Icon.ico" />
+    <Resource Include="FunZone_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DynamicInterop">

@@ -3,8 +3,9 @@
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
       xmlns:converters="clr-namespace:FEC.Converters;assembly=FBLA2017"
-      Title="EmployeeList" HorizontalAlignment="Left">
-    <StackPanel Orientation="Vertical" MinWidth="450">
+      Title="EmployeeList" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" MinWidth="450">
+        <Image Source="FunZone_Logo.png" RenderOptions.BitmapScalingMode="Fant" Width="150" Height="150" />
         <GroupBox Header="Employees">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>

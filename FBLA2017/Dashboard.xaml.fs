@@ -49,11 +49,11 @@ module Dashboard =
             ClosureCommand view
 
         member self.PeakDays =
-            let graph _ = Reports.peakDays conn |> ignore
+            let graph _ = Reports.peakDays conn
             ClosureCommand graph
 
         member self.PeakHours =
-            let graph _ = Reports.peakHours conn |> ignore
+            let graph _ = Reports.peakHours conn
             ClosureCommand graph
 
         member self.DailyAttendance

@@ -17,17 +17,14 @@ module Dashboard =
 
         do self.DataContext <- self
            let mainView = mainWindow.FindName("MainView") :?> Frame
-           let refresh _ =
+           let refresh (u : Control) _ =
                // Force refresh by changing the data context
-               let context = self.DailyAttendanceCount.DataContext
-               self.DailyAttendanceCount.DataContext <- null
-               self.DailyAttendanceCount.DataContext <- context
-
-               let context = self.HourlyAttendanceCount.DataContext
-               self.HourlyAttendanceCount.DataContext <- null
-               self.HourlyAttendanceCount.DataContext <- context
-
-           mainView.Navigated.Add refresh
+               let context = u.DataContext
+               u.DataContext <- null
+               u.DataContext <- context
+           ([self.EmployeeCountCount; self.EmployeeExpensesCount; self.DailyAttendanceCount; self.HourlyAttendanceCount] : Control list)
+           |> List.map refresh
+           |> List.iter mainView.Navigated.Add
 
         member self.AddEmployee =
             let add _ =
@@ -56,6 +53,21 @@ module Dashboard =
             let graph _ = Reports.peakHours conn
             ClosureCommand graph
 
+        member self.EmployeeCount
+            with get () =
+                (getEmployees conn).Count
+
+        member self.EmployeeExpenses
+            with get () =
+                let employees = getEmployees conn
+                let addDays week =
+                    let asInt = function true -> 1 | false -> 0
+                    asInt week.Sunday + asInt week.Monday + asInt week.Tuesday + asInt week.Wednesday + asInt week.Thursday + asInt week.Friday + asInt week.Saturday
+                query { for e in employees do
+                        sumBy (match e.Payment with
+                               | Wage w -> w * (Seq.map addDays e.Schedule |> Seq.sum)
+                               | Salary s -> s / 52 )}
+        
         member self.DailyAttendance
             with get () =
                 let attendance = getAttendanceForWeek conn (getWeek ())

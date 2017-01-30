@@ -5,10 +5,6 @@
       xmlns:converters="clr-namespace:FEC.Converters;assembly=FBLA2017"
       Title="EmployeeList" HorizontalAlignment="Left">
     <Page.Resources>
-        <Image x:Key="Edit" Source="Edit_grey_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
-        <Image x:Key="Schedule" Source="Calendar_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
-        <Image x:Key="Delete" Source="VSO_RecycleBin_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
-
         <converters:JobConverter x:Key="JobConverter" />
         <converters:PayConverter x:Key="PayConverter" />
     </Page.Resources>
@@ -35,7 +31,9 @@
                             <Button Command="{Binding Path=DataContext.EditEmployee,       
                                                       RelativeSource={RelativeSource FindAncestor,
                                                                                      AncestorType={x:Type DataGrid}}}"
-                                    CommandParameter="{Binding ID}" Content="{StaticResource Edit}" />
+                                    CommandParameter="{Binding ID}">
+                                <Image Source="Edit_grey_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -45,7 +43,9 @@
                             <Button Command="{Binding Path=DataContext.EditSchedule,       
                                                       RelativeSource={RelativeSource FindAncestor,
                                                                                      AncestorType={x:Type DataGrid}}}"
-                                    CommandParameter="{Binding ID}" Content="{StaticResource Schedule}" />
+                                    CommandParameter="{Binding ID}">
+                                <Image Source="Calendar_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -55,7 +55,9 @@
                             <Button Command="{Binding Path=DataContext.DeleteEmployee,       
                                                       RelativeSource={RelativeSource FindAncestor,
                                                                                      AncestorType={x:Type DataGrid}}}"
-                                    CommandParameter="{Binding ID}" Content="{StaticResource Delete}" />
+                                    CommandParameter="{Binding ID}">
+                                <Image Source="VSO_RecycleBin_16x.png" RenderOptions.BitmapScalingMode="Fant" Width="16" Height="16" />
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

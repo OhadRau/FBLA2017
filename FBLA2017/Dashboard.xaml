@@ -4,6 +4,9 @@
       xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
       xmlns:converters="clr-namespace:FEC.Converters;assembly=FBLA2017"
       Title="EmployeeList" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Page.Resources>
+        <converters:MoneyConverter x:Key="MoneyConverter" />
+    </Page.Resources>
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" MinWidth="450">
         <Image Source="FunZone_Logo.png" RenderOptions.BitmapScalingMode="Fant" Width="150" Height="150" />
         <GroupBox Header="Employees">
@@ -29,14 +32,14 @@
 
                 <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                     <Label>Number of Employees: </Label>
-                    <Label Content="{Binding EmployeeCount}" />
+                    <Label x:Name="EmployeeCountCount" Content="{Binding EmployeeCount}" />
                 </StackPanel>
 
                 <Button Grid.Row="2" Grid.Column="0" Command="{Binding ViewEmployees}">View/Edit</Button>
 
                 <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
-                    <Label>Employee Expenses: </Label>
-                    <Label Content="{Binding EmployeeExpenses}" />
+                    <Label>Weekly Employee Expenses: </Label>
+                    <Label x:Name="EmployeeExpensesCount"  Content="{Binding EmployeeExpenses, Converter={StaticResource MoneyConverter}}" />
                 </StackPanel>
             </Grid>
         </GroupBox>

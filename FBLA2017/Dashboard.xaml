@@ -32,14 +32,14 @@
 
                 <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                     <Label>Number of Employees: </Label>
-                    <Label x:Name="EmployeeCountCount" Content="{Binding EmployeeCount}" />
+                    <Label x:Name="EmployeeCountControl" Content="{Binding EmployeeCount}" />
                 </StackPanel>
 
                 <Button Grid.Row="2" Grid.Column="0" Command="{Binding ViewEmployees}">View/Edit</Button>
 
                 <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
                     <Label>Weekly Employee Expenses: </Label>
-                    <Label x:Name="EmployeeExpensesCount"  Content="{Binding EmployeeExpenses, Converter={StaticResource MoneyConverter}}" />
+                    <Label x:Name="EmployeeExpensesControl"  Content="{Binding EmployeeExpenses, Converter={StaticResource MoneyConverter}}" />
                 </StackPanel>
             </Grid>
         </GroupBox>
@@ -56,12 +56,12 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal">
                     <Label>Today's Attendance: </Label>
-                    <Label x:Name="DailyAttendanceCount"  Content="{Binding DailyAttendance}" />
+                    <Label x:Name="DailyAttendanceControl"  Content="{Binding DailyAttendance}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <Label>Last Hour: </Label>
-                    <TextBox x:Name="HourlyAttendanceCount" MinWidth="100" Text="{Binding HourlyAttendance, UpdateSourceTrigger=LostFocus}" />
+                    <TextBox x:Name="HourlyAttendanceControl" MinWidth="100" Text="{Binding HourlyAttendance, UpdateSourceTrigger=LostFocus}" />
                     <Button Command="{Binding ViewAttendance}">Full View</Button>
                 </StackPanel>
             </Grid>

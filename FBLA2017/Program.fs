@@ -3,6 +3,7 @@
 module Main = // Main/start-up module for the program
     open FsXaml
     open System
+    open System.IO
     open System.Reflection
     open System.Windows
     open System.Windows.Controls
@@ -16,8 +17,14 @@ module Main = // Main/start-up module for the program
     [<STAThread>]
     [<EntryPoint>]
     let main argv =
+        (* Build the AppData path for saving the database file. This is necessary because
+           if the program isn't executed as an administrator, it isn't able to write to
+           the Program Files folder that it gets installed to. As a result, simply doing
+           "./FEC.db" is not an option. *)
+        let appData = Environment.GetFolderPath Environment.SpecialFolder.ApplicationData
+        let dbFile = Path.Combine (appData, "FBLA", "FEC.db")
         // Create or open the database and store a connection to it
-        let conn = createOrOpen "./FEC.db"
+        let conn = createOrOpen dbFile
         // Initialize the main window
         let mainWindow = MainWindow ()
         // Initialize the dashboard view for the main window using the database connection

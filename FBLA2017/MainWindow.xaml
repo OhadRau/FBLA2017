@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="FunZone Control Panel" Height="540" Width="800"
-    Icon="FunZone_Icon.ico">
+    Icon="/FBLA2017;component/FunZone_Icon.ico">
     <Grid>
         <Frame x:Name="MainView" Content="Frame" Margin="0,0,0,0" NavigationUIVisibility="Hidden" />
     </Grid>

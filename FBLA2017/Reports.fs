@@ -56,21 +56,24 @@ module Reports = // Provides functions for generating reports
                                 ; Friday = acc.Friday + week.Friday
                                 ; Saturday = acc.Saturday + week.Saturday
                                 }
-        (* Using addWeeks, reduce the hours of every week into a single day's worth of
-           attendance. Then, reduce all the weeks using addWeeks to get a final sum of
-           attendance (by day of the week). *)
-        let sum = allWeeks.ToArray () |> Seq.map (Seq.reduce addWeeks) |> Seq.reduce addWeeks
-        // Create a list of fields (AKA days of the week) in the Hour<'a> type
-        let fields = FSharpType.GetRecordFields (sum.GetType ())
+
+        // Make sure there are already weeks in the database
+        if allWeeks.Count = 0 then ignore <| MessageBox.Show "Please log attendance before generating a report" else
+            (* Using addWeeks, reduce the hours of every week into a single day's worth of
+               attendance. Then, reduce all the weeks using addWeeks to get a final sum of
+               attendance (by day of the week). *)
+            let sum = allWeeks.ToArray () |> Seq.map (Seq.reduce addWeeks) |> Seq.reduce addWeeks
+            // Create a list of fields (AKA days of the week) in the Hour<'a> type
+            let fields = FSharpType.GetRecordFields (sum.GetType ())
         
-        // Convert every one of these days into an ordered pair with the name of that day and the value for that day
-        Seq.map (fun (field : Reflection.PropertyInfo) -> field.Name, field.GetValue sum :?> int) fields
-        |> Chart.Line // Graph the ordered pairs on a line chart
-        // Use "Day of Week" as the X-axis heading and make labels on the X-axis fit side-by-side
-        |> Chart.WithXAxis (Title = "Day of Week", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
-        // Use "Number of Customers" as the Y-axis heading
-        |> Chart.WithYAxis (Title = "Number of Customers")
-        |> showChart // Show the chart in a new window
+            // Convert every one of these days into an ordered pair with the name of that day and the value for that day
+            Seq.map (fun (field : Reflection.PropertyInfo) -> field.Name, field.GetValue sum :?> int) fields
+            |> Chart.Line // Graph the ordered pairs on a line chart
+            // Use "Day of Week" as the X-axis heading and make labels on the X-axis fit side-by-side
+            |> Chart.WithXAxis (Title = "Day of Week", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
+            // Use "Number of Customers" as the Y-axis heading
+            |> Chart.WithYAxis (Title = "Number of Customers")
+            |> showChart // Show the chart in a new window
 
     // Create a chart showing the hours of day with the highest attendance
     let peakHours conn =
@@ -79,25 +82,28 @@ module Reports = // Provides functions for generating reports
 
         // Create a function to sum the days of the week by hour (creating a list of customers / hour)
         let addDays week = week.Sunday + week.Monday + week.Tuesday + week.Wednesday + week.Thursday + week.Friday + week.Saturday
-        // Using addDays, reduce each Hour<int> into a single int
-        let sums = allWeeks.ToArray () |> Array.map (Array.map addDays)
-        // "Fold" across the array, summing up every single week along a single hour
-        let hourSums = Array.fold (fun a b -> [| for i in 0..23 -> Seq.item i a + Seq.item i b |]) (Array.init 24 (fun _ -> 0)) sums
+        
+        // Make sure there are already weeks in the database
+        if allWeeks.Count = 0 then ignore <| MessageBox.Show "Please log attendance before generating a report" else
+            // Using addDays, reduce each Hour<int> into a single int
+            let sums = allWeeks.ToArray () |> Array.map (Array.map addDays)
+            // "Fold" across the array, summing up every single week along a single hour
+            let hourSums = Array.fold (fun a b -> [| for i in 0..23 -> Seq.item i a + Seq.item i b |]) (Array.init 24 (fun _ -> 0)) sums
 
-        let labels = // A list of labels for each hour ("12:00 AM", "1:00 AM", ...)
-            let hour_of_int i = // Function to convert an int (0-23) into an hour label
-                (* If the hour is divisible by 12, then the hour is called "12"
-                   (i.e. 12 AM and 12 PM). Otherwise, it keeps the same number,
-                   module 12 (e.g. hour #2 = 2 AM, hour #14 = 2 PM). *)
-                let hour = if i % 12 = 0 then 12 else i % 12
-                let period = if i < 12 then "AM" else "PM" // Before noon is "AM", after is "PM"
-                sprintf "%i:00 %s" hour period // Format this information into a time string
-            List.map hour_of_int [0..23] // Turn every int from 0 to 23 into an hour label
+            let labels = // A list of labels for each hour ("12:00 AM", "1:00 AM", ...)
+                let hour_of_int i = // Function to convert an int (0-23) into an hour label
+                    (* If the hour is divisible by 12, then the hour is called "12"
+                       (i.e. 12 AM and 12 PM). Otherwise, it keeps the same number,
+                       module 12 (e.g. hour #2 = 2 AM, hour #14 = 2 PM). *)
+                    let hour = if i % 12 = 0 then 12 else i % 12
+                    let period = if i < 12 then "AM" else "PM" // Before noon is "AM", after is "PM"
+                    sprintf "%i:00 %s" hour period // Format this information into a time string
+                List.map hour_of_int [0..23] // Turn every int from 0 to 23 into an hour label
 
-        Seq.zip labels hourSums // Combine the list of labels and the list of hours into a list of ordered pairs
-        |> Chart.Line // Graph the ordered pairs on a line chart
-        // Use "Time of Day" as the X-axis heading and make labels on the X-axis fit side-by-side
-        |> Chart.WithXAxis (Title = "Time of Day", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
-        // Use "Number of Customers" as the Y-axis heading
-        |> Chart.WithYAxis (Title = "Number of Customers")
-        |> showChart // Show the chart in a new window
+            Seq.zip labels hourSums // Combine the list of labels and the list of hours into a list of ordered pairs
+            |> Chart.Line // Graph the ordered pairs on a line chart
+            // Use "Time of Day" as the X-axis heading and make labels on the X-axis fit side-by-side
+            |> Chart.WithXAxis (Title = "Time of Day", LabelStyle = ChartTypes.LabelStyle (Angle = -45, Interval = 1.0))
+            // Use "Number of Customers" as the Y-axis heading
+            |> Chart.WithYAxis (Title = "Number of Customers")
+            |> showChart // Show the chart in a new window

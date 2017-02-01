@@ -15,62 +15,44 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_138C7A419AE1283E123ED05DD319E890"
-        "OwnerKey" = "8:_F90ACDBD5F4B4869BF03E30121BB776C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_138C7A419AE1283E123ED05DD319E890"
-        "OwnerKey" = "8:_6A9ADAA4A0F84CF5AA39E2F2F86AC75D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1CDAAC40A56C4582B800D92F9F724EE9"
+        "MsmKey" = "8:_03E2E05C1211438E848BFEC7DBFA7553"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_24B7CEB1D3C34F2787CE6C02A269A156"
+        "MsmKey" = "8:_21263D4B3BEC4085893359B1463B3B44"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_257193469E024F468002CB5992FE7703"
+        "MsmKey" = "8:_80109550395846A3A53BB44557CB3606"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_37B3B4F6823B4A619EC4115203FEB41A"
+        "MsmKey" = "8:_981A571D455D4CB2B443187C7A11B51C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_6A9ADAA4A0F84CF5AA39E2F2F86AC75D"
+        "MsmKey" = "8:_A3EF9E4213F14F63ADB7540B0E01957B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_6BD928EAB74D6B35CD77458F3C3B168C"
-        "OwnerKey" = "8:_D3798C27D7AA4191A544A1B2BD81E1D6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6E678C19BD254BDAA505D7D123E90865"
+        "MsmKey" = "8:_C49AE90F2AD24487B7C68475DC84CF1E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_ABDF45B2B54C418DAC7A586D1A2D5543"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_C7696286A720549DF99279C5420083FF"
+        "OwnerKey" = "8:_03E2E05C1211438E848BFEC7DBFA7553"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -81,104 +63,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CD07F2BD8ABD4426A9936AA73B3BA874"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D3798C27D7AA4191A544A1B2BD81E1D6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E3075E9118EB4759BDAA092D94C587C1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F90ACDBD5F4B4869BF03E30121BB776C"
+        "MsmKey" = "8:_CA6EE1068C504CB59B9723F2693BA436"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E3075E9118EB4759BDAA092D94C587C1"
+        "OwnerKey" = "8:_21263D4B3BEC4085893359B1463B3B44"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1CDAAC40A56C4582B800D92F9F724EE9"
+        "OwnerKey" = "8:_A3EF9E4213F14F63ADB7540B0E01957B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_257193469E024F468002CB5992FE7703"
+        "OwnerKey" = "8:_80109550395846A3A53BB44557CB3606"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_37B3B4F6823B4A619EC4115203FEB41A"
+        "OwnerKey" = "8:_CA6EE1068C504CB59B9723F2693BA436"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6A9ADAA4A0F84CF5AA39E2F2F86AC75D"
+        "OwnerKey" = "8:_03E2E05C1211438E848BFEC7DBFA7553"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_37B3B4F6823B4A619EC4115203FEB41A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F90ACDBD5F4B4869BF03E30121BB776C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_138C7A419AE1283E123ED05DD319E890"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D3798C27D7AA4191A544A1B2BD81E1D6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6BD928EAB74D6B35CD77458F3C3B168C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_ABDF45B2B54C418DAC7A586D1A2D5543"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_24B7CEB1D3C34F2787CE6C02A269A156"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6E678C19BD254BDAA505D7D123E90865"
+        "OwnerKey" = "8:_C7696286A720549DF99279C5420083FF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -199,6 +121,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -215,6 +145,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -244,51 +190,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_138C7A419AE1283E123ED05DD319E890"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_03E2E05C1211438E848BFEC7DBFA7553"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:zlib.net, Version=1.0.3.0, Culture=neutral, PublicKeyToken=47d7877cb3620160"
+            "AssemblyAsmDisplayName" = "8:FsXaml.Wpf.TypeProvider, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_138C7A419AE1283E123ED05DD319E890"
+                    "_03E2E05C1211438E848BFEC7DBFA7553"
                     {
-                    "Name" = "8:zlib.net.DLL"
+                    "Name" = "8:FsXaml.Wpf.TypeProvider.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:zlib.net.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1CDAAC40A56C4582B800D92F9F724EE9"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:zlib.net, Version=1.0.3.0, Culture=neutral, PublicKeyToken=47d7877cb3620160"
-                "ScatterAssemblies"
-                {
-                    "_1CDAAC40A56C4582B800D92F9F724EE9"
-                    {
-                    "Name" = "8:zlib.net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\zlib.net.dll"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\FsXaml.Wpf.TypeProvider.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -306,20 +221,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_24B7CEB1D3C34F2787CE6C02A269A156"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_21263D4B3BEC4085893359B1463B3B44"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FsLexYacc.Runtime, Version=6.0.2.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_24B7CEB1D3C34F2787CE6C02A269A156"
+                    "_21263D4B3BEC4085893359B1463B3B44"
                     {
-                    "Name" = "8:FsLexYacc.Runtime.dll"
+                    "Name" = "8:FSharp.Data.TypeProviders.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FsLexYacc.Runtime.dll"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\FSharp.Data.TypeProviders.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -337,20 +252,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_257193469E024F468002CB5992FE7703"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_80109550395846A3A53BB44557CB3606"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:FSharp.Charting, Version=0.90.14.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_257193469E024F468002CB5992FE7703"
+                    "_80109550395846A3A53BB44557CB3606"
                     {
-                    "Name" = "8:System.Data.SQLite.dll"
+                    "Name" = "8:FSharp.Charting.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\System.Data.SQLite.dll"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\FSharp.Charting.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -368,20 +283,40 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_37B3B4F6823B4A619EC4115203FEB41A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_981A571D455D4CB2B443187C7A11B51C"
+            {
+            "SourcePath" = "8:..\\FBLA2017\\FunZone_Icon.ico"
+            "TargetName" = "8:FunZone_Icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A3EF9E4213F14F63ADB7540B0E01957B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathNet.Numerics.FSharp, Version=2.1.0.19, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_37B3B4F6823B4A619EC4115203FEB41A"
+                    "_A3EF9E4213F14F63ADB7540B0E01957B"
                     {
-                    "Name" = "8:MathNet.Numerics.FSharp.dll"
+                    "Name" = "8:FSharp.Core.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\MathNet.Numerics.FSharp.dll"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\FSharp.Core.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -399,21 +334,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6A9ADAA4A0F84CF5AA39E2F2F86AC75D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C49AE90F2AD24487B7C68475DC84CF1E"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathNet.Numerics, Version=2.1.1.20, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_6A9ADAA4A0F84CF5AA39E2F2F86AC75D"
-                    {
-                    "Name" = "8:MathNet.Numerics.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MathNet.Numerics.DLL"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\x64\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
             "Condition" = "8:"
@@ -427,17 +351,17 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6BD928EAB74D6B35CD77458F3C3B168C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C7696286A720549DF99279C5420083FF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:FsXaml.Wpf, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6BD928EAB74D6B35CD77458F3C3B168C"
+                    "_C7696286A720549DF99279C5420083FF"
                     {
                     "Name" = "8:FsXaml.Wpf.DLL"
                     "Attributes" = "3:512"
@@ -461,164 +385,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6E678C19BD254BDAA505D7D123E90865"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CA6EE1068C504CB59B9723F2693BA436"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6E678C19BD254BDAA505D7D123E90865"
+                    "_CA6EE1068C504CB59B9723F2693BA436"
                     {
-                    "Name" = "8:FSharp.Data.TypeProviders.dll"
+                    "Name" = "8:System.Data.SQLite.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FSharp.Data.TypeProviders.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_ABDF45B2B54C418DAC7A586D1A2D5543"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FsXaml.Wpf, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_ABDF45B2B54C418DAC7A586D1A2D5543"
-                    {
-                    "Name" = "8:FsXaml.Wpf.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FsXaml.Wpf.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CD07F2BD8ABD4426A9936AA73B3BA874"
-            {
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FsLexYacc.Runtime.xml"
-            "TargetName" = "8:FsLexYacc.Runtime.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D3798C27D7AA4191A544A1B2BD81E1D6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FsXaml.Wpf.TypeProvider, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D3798C27D7AA4191A544A1B2BD81E1D6"
-                    {
-                    "Name" = "8:FsXaml.Wpf.TypeProvider.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FsXaml.Wpf.TypeProvider.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E3075E9118EB4759BDAA092D94C587C1"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_E3075E9118EB4759BDAA092D94C587C1"
-                    {
-                    "Name" = "8:FSharp.Core.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\FSharp.Core.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F90ACDBD5F4B4869BF03E30121BB776C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathNet.Numerics, Version=2.1.1.20, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F90ACDBD5F4B4869BF03E30121BB776C"
-                    {
-                    "Name" = "8:MathNet.Numerics.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\FBLA2017\\bin\\Debug\\MathNet.Numerics.dll"
+            "SourcePath" = "8:..\\FBLA2017\\bin\\Release\\System.Data.SQLite.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -693,7 +473,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FEC"
         "ProductCode" = "8:{9E202EB7-A605-4302-A328-0C18454CD06B}"
-        "PackageCode" = "8:{ECA6923C-D3C8-40BD-9587-B90F7314C61A}"
+        "PackageCode" = "8:{4E6DF0AF-363B-474C-8ADD-60EA79EDB7A6}"
         "UpgradeCode" = "8:{11B6B9C7-8E1D-4427-BEEF-93142A08355F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -813,6 +593,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9CBE1252864449429D13BBD701C8A238"
+            {
+            "Name" = "8:FunZone Control Panel"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_CA4E9D50D55A46D18EE849BE1D606213"
+            "Folder" = "8:_4B436667A8EA4C4C93A82333E60147C8"
+            "WorkingFolder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
+            "Icon" = "8:_981A571D455D4CB2B443187C7A11B51C"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -1214,7 +1008,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CA4E9D50D55A46D18EE849BE1D606213"
             {
-            "SourcePath" = "8:..\\FBLA2017\\obj\\Debug\\FBLA2017.exe"
+            "SourcePath" = "8:..\\FBLA2017\\obj\\Release\\FBLA2017.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
@@ -1234,34 +1028,6 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{121ED802-8FFF-436A-AB4B-2307C69264C9}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CD074ED6139B4BE99F92EB092282A2C6"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3CD0B037ADFD497AA590C53D38F5CD47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:SourceFiles"
             "OutputProjectGuid" = "8:{121ED802-8FFF-436A-AB4B-2307C69264C9}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

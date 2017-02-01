@@ -149,8 +149,12 @@ module Data = // Provides data types and database functions
         binFormatter.Deserialize stream :?> 'a
 
     // Creates a new SQLite database file or connects to an existing one, using dbFile as the path to the database
-    let createOrOpen dbFile =
+    let createOrOpen dbPath dbName =
         let mutable init = false // Should we initialize it with CREATE clauses?
+        if not (Directory.Exists dbPath) then
+            Directory.CreateDirectory dbPath |> ignore // Create the directory for the database
+            init <- true // Since the file was just created, yes
+        let dbFile = Path.Combine (dbPath, dbName) // Create the full path to the file
         if not (File.Exists dbFile) then
             SQLiteConnection.CreateFile dbFile // Create the file with the correct attributes for the database
             init <- true // Since the file was just created, yes

@@ -22,10 +22,12 @@ module Reports = // Provides functions for generating reports
         let cancel (form : Forms.Form) _ _ = // Take a form, so that we can close out of it
             form.Close ()
         let print _ _ =
-            // Save the chart as a temporary .png file in the executable's directory
-            chart.SaveChartAs ("report.png", ChartTypes.ChartImageFormat.Png)
+            // Create a temporary location to store the .png file
+            let loc = Path.Combine (Path.GetTempPath (), "report.png")
+            // Save the chart as a temporary .png file in the temporary location
+            chart.SaveChartAs (loc, ChartTypes.ChartImageFormat.Png)
             // Convert the saved image into a printable image
-            let img = Drawing.Image.FromFile "report.png"
+            let img = Drawing.Image.FromFile loc
             // Create a printable document
             let doc = PrintDocument ()
             // Add a print event handler to the document

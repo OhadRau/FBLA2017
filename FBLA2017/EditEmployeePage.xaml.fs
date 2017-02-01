@@ -43,17 +43,19 @@ module EditEmployeePage = // Provides the code backing for the EditEmployeePage 
 
         member self.Save = // Command to save the rows to the database and return to the previous page
             let save _ = // Create a function to perform the steps
-                // Select the values of the form's fields
-                let first = self.FirstName.Text
-                let last = self.LastName.Text
-                let job = self.JobTitle.Text |> job_of_string
-                let pay = match self.PayType.Text with // Using pattern matching, convert the PayType and Pay fields to a Pay object
-                          | "Wage" -> Wage (int_of_pay_string self.Pay.Text)
-                          | "Salary" -> Salary (int_of_pay_string self.Pay.Text)
-                // Update the employee with the proper details
-                ignore (updateEmployee conn employee.ID first last job pay)
-                let mainView = mainWindow.FindName("MainView") :?> Frame // Get the main view in the window
-                mainView.Content <- previous // Set the main view's contents to the previous page
+                try // Avoid crashes due to formatting errors
+                    // Select the values of the form's fields
+                    let first = self.FirstName.Text
+                    let last = self.LastName.Text
+                    let job = self.JobTitle.Text |> job_of_string
+                    let pay = match self.PayType.Text with // Using pattern matching, convert the PayType and Pay fields to a Pay object
+                              | "Wage" -> Wage (int_of_pay_string self.Pay.Text |> Math.Abs)
+                              | "Salary" -> Salary (int_of_pay_string self.Pay.Text |> Math.Abs)
+                    // Update the employee with the proper details
+                    ignore (updateEmployee conn employee.ID first last job pay)
+                    let mainView = mainWindow.FindName("MainView") :?> Frame // Get the main view in the window
+                    mainView.Content <- previous // Set the main view's contents to the previous page
+                with _ -> () // Don't submit if we crashed
             ClosureCommand save // Convert the "save" function into a Command that WPF can bind to
                 
         member self.Cancel = // Command to return to the previous page

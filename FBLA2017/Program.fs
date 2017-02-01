@@ -22,9 +22,9 @@ module Main = // Main/start-up module for the program
            the Program Files folder that it gets installed to. As a result, simply doing
            "./FEC.db" is not an option. *)
         let appData = Environment.GetFolderPath Environment.SpecialFolder.ApplicationData
-        let dbFile = Path.Combine (appData, "FBLA", "FEC.db")
+        let dbPath = Path.Combine (appData, "FBLA")
         // Create or open the database and store a connection to it
-        let conn = createOrOpen dbFile
+        let conn = createOrOpen dbPath "FEC.db"
         // Initialize the main window
         let mainWindow = MainWindow ()
         // Initialize the dashboard view for the main window using the database connection
